@@ -21,11 +21,11 @@ int main()
           cout<<"  ";  
         }
         
-        for(j=0;j<i+1;j++)
+        for(j=0;j<=i;j++)
         {
-            cout<<j<<" ";
+            cout<<j+1<<" ";
         }
-        for(int j=0;j<i+1;j++)
+        for(int j=i;j>0;j--)
         {
             cout<<j<<" ";
         }
