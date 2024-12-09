@@ -25,6 +25,7 @@ bool isvalid(vector<int>&arr,int n,int m,int maxAllowedpages)
 
 int allocateBooks(vector<int> &arr, int n,int m)
 {
+    if(m>n) return -1;
     int sum=0;
     for(int i=0;i<n;i++)
     {
