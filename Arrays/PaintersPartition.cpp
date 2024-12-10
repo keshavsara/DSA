@@ -1,29 +1,28 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-
-bool isvalid(vector<int>&arr,int n,int m,int maxAllowedpages)
+bool isvalid(vector<int>&arr,int n,int m,int maxAllowedWalls)
 {
-    int students=1,pages=0;
+    int Painters=1,units=0;
     for(int i=0;i<n;i++)
     {
-        if(arr[i]>maxAllowedpages)
+        if(arr[i]>maxAllowedWalls)
         {
             return false;
         }
-        if(pages+arr[i]<=maxAllowedpages)
+        if(units+arr[i]<=maxAllowedWalls)
         {
-            pages+=arr[i];
+            units+=arr[i];
         }
         else{
-            students++;
-            pages=arr[i];
+            Painters++;
+            units=arr[i];
         }
     }
-    return students>m ? false:true;
+    return Painters>m ? false:true;
 }
 
-int allocateBooks(vector<int> &arr, int n,int m)
+int MinCost(vector<int> &arr, int n,int m)
 {
     if(m>n) return -1;
     int sum=0;
@@ -55,8 +54,9 @@ int allocateBooks(vector<int> &arr, int n,int m)
 
 int main()
 {
-    vector<int>arr={2,1,3,4};
-    int n=4,m=2;
-    cout<<"Minimum Pages to a Student assigned is"<<allocateBooks(arr,n,m)<<endl;
+    vector<int> arr = {40, 30, 10, 20};
+    int n = 4; 
+    int m = 2; 
+    cout<<"Minimum cost :" << MinCost(arr,n,m)<<endl;
     return 0;
 }
